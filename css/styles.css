@@ -91,14 +91,15 @@ img {
 
 .icon-header {
   margin-right: 10px;
+  fill: var(--title-text-color);
 }
 
 .site-nav .link-current {
   color: var(--accent-color);
 }
 
-.contact-link-item:hover,
-.contact-link-item:focus {
+.contact-link-item:hover .icon-header,
+.contact-link-item:focus .icon-header {
   fill: var(--accent-color);
 }
 
@@ -132,7 +133,7 @@ img {
 
 .site-nav {
   display: flex;
-  gap: 30px;
+  gap: 50px;
 }
 
 .contact-link {
@@ -147,7 +148,7 @@ img {
   letter-spacing: 0.02em;
   font-weight: 500;
   line-height: 1.14;
-  transition: var(--transition-animation);
+  transition: color var(--transition-animation);
 }
 .contact-link-item {
   display: flex;
@@ -155,7 +156,7 @@ img {
   letter-spacing: 0.02;
   font-weight: 500;
   line-height: 1.14;
-  transition: var(--transition-animation);
+  transition: color var(--transition-animation);
 }
 
 .header-link.link-current {
@@ -196,7 +197,7 @@ img {
 /* hero section */
 
 .overlay {
-  width: 1600px;
+  max-width: 1600px;
   height: 600px;
   margin-right: auto;
   margin-left: auto;
@@ -376,6 +377,7 @@ img {
 
 .team-soc-icon {
   fill: var(--soc-color);
+  transition: fill var(--transition-animation);
 }
 
 .team-soc-link:hover {
@@ -400,7 +402,8 @@ img {
   border-radius: 4px;
   padding: 6px 22px;
   border: 0;
-  transition: var(--transition-animation-back-col);
+
+  transition: color var(--transition-animation), background var(--transition-animation);
 }
 
 .projects {
@@ -435,10 +438,9 @@ img {
 }
 
 .examples-link {
-  display: block;
   width: 370px;
-
-  transition: var(--transition-animation);
+  display: block;
+  background: var(--primary-white-color);
 }
 
 .examples-item {
@@ -466,6 +468,12 @@ img {
   margin-top: 0px;
 }
 
+.examples-link:hover,
+.examples-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .examples-box {
   position: relative;
   overflow: hidden;
@@ -491,12 +499,6 @@ img {
 
 .examples-link:hover .examples-text {
   transform: translateY(0%);
-}
-
-.examples-link:hover,
-.examples-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* Section Production */
@@ -575,6 +577,7 @@ img {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  transition: border-color var(--transition-animation);
 }
 
 .clients-icon {
@@ -587,7 +590,8 @@ img {
   border-color: var(--accent-color);
 }
 
-.clients-link:hover .clients-icon {
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
   fill: var(--accent-color);
 }
 
@@ -598,6 +602,7 @@ img {
   background-color: var(--detail-color);
   color: var(--primary-white-color);
   padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .logo-link-footer {
@@ -648,7 +653,7 @@ img {
   font-weight: 400;
   line-height: 1.71;
 
-  transition: var(--transition-animation);
+  transition: color var(--transition-animation);
 }
 
 .tel-link-footer {
@@ -657,7 +662,7 @@ img {
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
 
-  transition: var(--transition-animation);
+  transition: color var(--transition-animation);
 }
 
 .mail-item {
@@ -668,12 +673,7 @@ img {
 
 .footer-flex {
   display: flex;
-}
-
-.footernav {
-  padding-right: 70px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  align-items: baseline;
 }
 
 .socialnet-title {
@@ -688,7 +688,7 @@ img {
 .socialnet {
   width: 206px;
   height: 80px;
-  margin-top: 76px;
+  margin-left: 70px;
 }
 
 .socialnet-list {
@@ -737,6 +737,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 300ms linear;
+  padding: 40px;
 }
 
 .backdrop.is-hidden .modal {
@@ -772,4 +773,41 @@ img {
 
   background: rgba(0, 0, 0, 0.2);
   transition: opacity 300ms linear, visibility 300ms linear;
+}
+
+/* Modal Form */
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-input {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.modal-input::placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: rgba(117, 117, 117, 1);
+}
+
+.modal-textarea {
+  width: 448px;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  padding: 10px;
 }

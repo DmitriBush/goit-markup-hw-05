@@ -459,6 +459,53 @@
             <use href=".//images/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
+        <!-- Modal Form -->
+        <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
+        <form class="modal-form">
+          <label class="modal-label" for="username"
+            >Ім'я
+            <div class="input-modal-container">
+              <input type="text" class="modal-input" name="user-name" required minlength="2" />
+              <svg class="icon-modal" width="18" height="18">
+                <use href=".//images/symbol-defs.svg#icon-person-black"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="modal-label" for="tel"
+            >Телефон
+            <div class="input-modal-container">
+              <input type="tel" class="modal-input" name="user-email" required /><svg
+                class="icon-modal"
+                width="18"
+                height="18"
+              >
+                <use href=".//images/symbol-defs.svg#icon-phone-black"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="modal-label" for="email"
+            >Пошта
+            <div class="input-modal-container">
+              <input type="email" class="modal-input" name="user-tel" required /><svg
+                class="icon-modal"
+                width="18"
+                height="18"
+              >
+                <use href=".//images/symbol-defs.svg#icon-email-black"></use>
+              </svg>
+            </div>
+          </label>
+          <label class="modal-label-text" for="coments"
+            >Коментар<textarea
+              type="com"
+              class="modal-textarea"
+              name="user-coment"
+              placeholder="Введіть текст"
+            ></textarea>
+          </label>
+
+          <button class="modal-button" type="sabmit">Відправити</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
